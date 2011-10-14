@@ -1,5 +1,7 @@
 PhotoReview::Application.routes.draw do
-  resources :photos
+  resources :photos do
+    resources :reviews
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

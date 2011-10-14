@@ -69,21 +69,6 @@ class PhotosController < ApplicationController
   # PUT /photos/1
   # PUT /photos/1.json
   #REMOVED the Update Functionality
-=begin
-  def update
-    @photo = Photo.find(params[:id])
-
-    respond_to do |format|
-      if @photo.update_attributes(params[:photo])
-        format.html { redirect_to @photo, :notice => 'Photo was successfully updated.' }
-        format.json { head :ok }
-      else
-        format.html { render :action => "edit" }
-        format.json { render :json => @photo.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-=end
 
   # DELETE /photos/1
   # DELETE /photos/1.json

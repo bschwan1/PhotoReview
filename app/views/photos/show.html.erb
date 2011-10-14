@@ -21,9 +21,20 @@
 </p>
 
 <p>
-  <b></b>
+  <br />
   <%= image_tag("/photos/code_image/#{@photo.id}", :alt => "Unable to Display") %>
 </p>
 
+<p>
+  <h2>*** Reviews ***</h2>
+  <%= render @photo.reviews %>
+</p>
+
+<p>
+  <h2>*** Add a Review ***</h2>
+  <%= render "reviews/form" %>
+</p>
+
+<br />
 
 <%= link_to 'Photos to Review', photos_path %>

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111013221209) do
+ActiveRecord::Schema.define(:version => 20111014210406) do
 
   create_table "photos", :force => true do |t|
     t.string   "title"
@@ -21,5 +21,15 @@ ActiveRecord::Schema.define(:version => 20111013221209) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  create_table "reviews", :force => true do |t|
+    t.string   "reviewer"
+    t.text     "body"
+    t.integer  "photo_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "reviews", ["photo_id"], :name => "index_reviews_on_photo_id"
 
 end
