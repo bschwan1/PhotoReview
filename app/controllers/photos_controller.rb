@@ -44,11 +44,6 @@ class PhotosController < ApplicationController
 
   # GET /photos/1/edit
   #REMOVED the Edit Functionality
-=begin
-  def edit
-    @photo = Photo.find(params[:id])
-  end
-=end
 
   # POST /photos
   # POST /photos.json

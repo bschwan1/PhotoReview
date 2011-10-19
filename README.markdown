@@ -6,3 +6,6 @@ may post their photos for review by their peers, as well as review
 those photos that have been posted by others.
 
 Developed by [Wm Schwan].
+
+Dependencies:
+  - Added the "gem pg" to Gemfile for group :production to accommodate Heroku.
