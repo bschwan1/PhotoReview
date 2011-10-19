@@ -1,0 +1,15 @@
+<p>
+  <b>Reviewed by:</b> <%= review.reviewer %>
+  <b>on:</b> <%= review.created_at.localtime%>
+</p>
+ 
+<p>
+  <b>Review:</b>
+  <%= review.body %>
+</p>
+
+<p>
+  <%= link_to 'Delete Review', [review.photo, review],
+              :confirm => 'Are you sure?',
+              :method => :delete %>
+</p>

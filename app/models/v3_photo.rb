@@ -4,8 +4,6 @@ class Photo < ActiveRecord::Base
     self.content_type = input_data.content_type.chomp
     self.binary_data = input_data.read
   end
-  validates :title, :presence => true,
-                    :length => { :minimum => 6 }
   validates :filename, :presence => true
   validates_inclusion_of :content_type, :in => %w( image/jpeg ), :message => "must be a jpeg"
   has_many :reviews, :dependent => :destroy
