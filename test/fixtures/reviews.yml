@@ -1,11 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+# Loading 2 reviews into DB for Photo number One
 
 one:
-  reviewer: MyString
-  body: MyText
-  photo: 
+  reviewer: Jose Romero
+  body: I think that it is a good pic
+  photo: one
 
 two:
-  reviewer: MyString
-  body: MyText
-  photo: 
+  reviewer: Linda Parks
+  body: A little 2 blue for me
+  photo: one

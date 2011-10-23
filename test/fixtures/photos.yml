@@ -1,15 +1,29 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/Fixtures.html
+# Define macros for loading picture files for binary_data...
+<%
+  def fixture_data(name)
+    render_binary("#{::Rails.root.to_s}/test/fixtures/#{name}")
+  end
+
+  def render_binary(filename, indent_level = 4)
+    data = File.open(filename,'rb').read
+
+    indent = ""
+    indent_level.times{ indent << " " }
+
+    "!binary | \n#{indent}#{[data].pack('m').gsub(/\n/,"\n#{indent}")}\n"
+  end
+%>
 
 one:
-  title: MyString
-  description: MyString
-  content_type: MyString
-  filename: MyString
-  binary_data: 
+  title: This is the first
+  description: This is a photo of a colorful sunset
+  content_type: image/jpeg	
+  filename: Sunset.jpg
+  binary_data: <%= fixture_data("Sunset.jpg") %>
 
 two:
-  title: MyString
-  description: MyString
-  content_type: MyString
-  filename: MyString
-  binary_data: 
+  title: This is the second
+  description: This is a photo of a winter scene
+  content_type: image/jpeg
+  filename: Winter.jpg
+  binary_data: <%= fixture_data("Winter.jpg") %>

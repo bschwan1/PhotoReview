@@ -29,17 +29,15 @@ class PhotosControllerTest < ActionController::TestCase
     assert_response :success
   end
 
-  test "should get edit" do
-    get :edit, :id => @photo.to_param
-    assert_response :success
+  test "should not destroy photo with incorrect security" do
+    @request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials('student','secret')
+    assert_no_difference('Photo.count') do
+      delete :destroy, :id => @photo.to_param
+    end
   end
 
-  test "should update photo" do
-    put :update, :id => @photo.to_param, :photo => @photo.attributes
-    assert_redirected_to photo_path(assigns(:photo))
-  end
-
-  test "should destroy photo" do
+  test "should destroy photo with correct security" do
+    @request.env['HTTP_AUTHORIZATION'] = ActionController::HttpAuthentication::Basic.encode_credentials('instructor','secret')
     assert_difference('Photo.count', -1) do
       delete :destroy, :id => @photo.to_param
     end

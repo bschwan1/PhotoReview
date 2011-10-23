@@ -1,4 +1,4 @@
-<h1>Listing of Photos to Review</h1>
+<h1 align="center">Listing of Photos to Review</h1>
 
 <table>
   <tr>
@@ -15,9 +15,9 @@
     <td><%= photo.title %></td>
     <td><%= photo.description %></td>
     <td><%= photo.filename%></td>
-    <td><%= link_to 'Show', photo %></td>
-    <td>&nbsp</td>
-    <td><%= link_to 'Destroy', photo, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= link_to 'View', photo %></td>
+    <td>&nbsp&nbsp</td>
+    <td><%= link_to 'Delete', photo, :confirm => 'Are you sure?', :method => :delete %></td>
   </tr>
 <% end %>
 </table>

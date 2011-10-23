@@ -1,5 +1,7 @@
 class PhotosController < ApplicationController
 
+  http_basic_authenticate_with :name => "instructor", :password => "secret", :only => :destroy
+
   # CODE_IMAGE is macro for taking binary photo data and creating an image
   def code_image
     @image_data = Photo.find(params[:id])
