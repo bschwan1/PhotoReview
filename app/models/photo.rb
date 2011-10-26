@@ -7,6 +7,6 @@ class Photo < ActiveRecord::Base
   validates :title, :presence => true,
                     :length => { :minimum => 6 }
   validates :filename, :presence => true
-  validates_inclusion_of :content_type, :in => %w( image/jpeg ), :message => "must be a jpeg"
+  validates_inclusion_of :content_type, :in => %w(image/jpeg image/gif), :message => "must be a jpeg or gif"
   has_many :reviews, :dependent => :destroy
 end

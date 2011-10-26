@@ -32,3 +32,9 @@ group :production do
   # gems specifically for Heroku go here
   gem "pg"
 end
+
+group :test, :development do
+  # gems for RSpec
+  gem "rspec-rails", "~> 2.7"
+  gem 'capybara'
+end
